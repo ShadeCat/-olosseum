@@ -5,18 +5,18 @@ import java.util.Random;
 public class Battle {
     private final Warrior[] warriors;
 
-    Battle(Warrior[] warriors){
+    Battle(Warrior[] warriors) {
         this.warriors = warriors;
     }
 
-    public void run(){
+    public void run() {
         boolean continueBattle = true;
-        while (continueBattle){
-            for (int currentWarriorIndex = 0; currentWarriorIndex < warriors.length; currentWarriorIndex++){
+        while (continueBattle) {
+            for (int currentWarriorIndex = 0; currentWarriorIndex < warriors.length; currentWarriorIndex++) {
                 Warrior activeWarrior = warriors[currentWarriorIndex];
                 Warrior target = warriors[selectTarget(currentWarriorIndex, warriors)];
                 activeWarrior.makeTurn(target);
-                if (isBattleOver(warriors)){
+                if (isBattleOver(warriors)) {
                     continueBattle = false;
                     break;
                 }
@@ -26,13 +26,13 @@ public class Battle {
         }
     }
 
-    private int selectTarget(int currentWarriorIndex, Warrior[] warriors){
+    private int selectTarget(int currentWarriorIndex, Warrior[] warriors) {
         boolean isTargetSelected = false;
         Random random = new Random();
         int targetIndex = random.nextInt(warriors.length);
-        while (!isTargetSelected){
+        while (!isTargetSelected) {
             targetIndex = random.nextInt(warriors.length);
-            if(targetIndex!= currentWarriorIndex && warriors[targetIndex].health > 0){
+            if (targetIndex != currentWarriorIndex && warriors[targetIndex].health > 0) {
                 isTargetSelected = true;
             }
         }
@@ -48,15 +48,15 @@ public class Battle {
                 standingGladiators += 1;
             }
         }
-        if (standingGladiators > 1){
+        if (standingGladiators > 1) {
             isOver = false;
         }
-    return isOver;
+        return isOver;
     }
 
-    public void graceWinner(){
-        for (Warrior warrior: warriors){
-            if (warrior.health > 0){
+    public void graceWinner() {
+        for (Warrior warrior : warriors) {
+            if (warrior.health > 0) {
                 System.out.println("Гладиатор " + warrior.name + " вышел победителем!");
             }
         }

@@ -27,7 +27,7 @@ public abstract class Gladiator extends Warrior implements BasicActions {
 
     public void toHit(Warrior enemy) {
         System.out.println(this.name + " атакует " + enemy.name + ".");
-        if (Dice.roll(this.accuracy)){
+        if (Dice.roll(this.accuracy)) {
             enemy.getHit(this.strength);
         } else {
             System.out.println(enemy.name + " отразил удар.");

@@ -18,7 +18,7 @@ public abstract class Speciality extends Warrior implements SpecialActions {
 
 
     public void makeTurn(Warrior enemy) {
-        if(Dice.roll(Balance.SPECIAL_ATTACK_CHANCE)){
+        if (Dice.roll(Balance.SPECIAL_ATTACK_CHANCE)) {
             special(enemy);
         } else {
             wrapped.toHit(enemy);

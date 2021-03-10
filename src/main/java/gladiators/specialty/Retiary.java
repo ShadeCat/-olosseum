@@ -4,7 +4,7 @@ import common.Warrior;
 import gladiators.origins.Gladiator;
 
 
-public class Retiary extends Speciality  {
+public class Retiary extends Speciality {
 
     public Retiary(Gladiator source) {
         super(source);

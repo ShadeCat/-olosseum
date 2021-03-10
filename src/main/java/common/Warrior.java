@@ -9,7 +9,7 @@ public abstract class Warrior {
     public void getHit(int hitStrength) {
         this.health -= hitStrength;
         System.out.println(this.name + " получил " + hitStrength + " HP урона. Осталось " + this.health + " HP.");
-        if (this.health < 1){
+        if (this.health < 1) {
             System.out.println("Гладиатор " + this.name + " пал.");
         }
     }

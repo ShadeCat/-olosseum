@@ -13,7 +13,7 @@ public class Norman extends Gladiator {
     @Override
     public void toHit(Warrior enemy) {
         super.toHit(enemy);
-        if (Dice.roll(Balance.NORMAN_CHANCE_OF_BERSERK)){
+        if (Dice.roll(Balance.NORMAN_CHANCE_OF_BERSERK)) {
             System.out.println(this.name + " впадает в ярость берсерка и наносит дополнительный удар.");
         }
         super.toHit(enemy);
